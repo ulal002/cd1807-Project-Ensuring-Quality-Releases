@@ -7,8 +7,6 @@ trigger:
 # Otherwise, comment out the line below. 
 pool: MyAgentPool
 
-webAppName: 'Udacity-UrveshP3'
-
 variables:
   python.version: '3.8.10'
   ## ToDo: Replace the service connection name as used in the DevOps project settings
@@ -188,7 +186,7 @@ stages:
             displayName: 'Deploy Azure Web App'
             inputs:
               azureSubscription: 'Udacity-UrveshP3'     ## ToDo
-              appName: $(webAppName)               ## ToDo
+              appName: 'Udacity-UrveshP3'               ## ToDo
               appType: webApp
               package: $(Pipeline.Workspace)/$(Build.BuildId)-fakerestapi.zip      ## ToDo: Use the published zip artifact. 
           #--------------------------------------------#    
