@@ -10,7 +10,7 @@ pool: MyAgentPool
 variables:
   python.version: '3.8.10'
   ## ToDo: Replace the service connection name as used in the DevOps project settings
-  azureServiceConnectionId: 'UdacityP3-Urvesh'
+  azureServiceConnectionId: '21224261-cd5e-4fe3-8b0b-e801db489c32'
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
   # Environment name
