@@ -185,8 +185,8 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App'
             inputs:
-              azureSubscription: 'Udacity-UrveshP3'     ## ToDo
-              appName: 'Udacity-UrveshP3'               ## ToDo
+              azureSubscription: 'Udacity-Urvesh'     ## ToDo
+              appName: 'flask-webappP3'               ## ToDo
               appType: webApp
               package: $(Pipeline.Workspace)/$(Build.BuildId)-fakerestapi.zip      ## ToDo: Use the published zip artifact. 
           #--------------------------------------------#    
