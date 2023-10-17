@@ -2,7 +2,7 @@ resource "azurerm_virtual_network" "test" {
   name                 = "${var.application_type}-${var.resource_type}"
   address_space        = "${var.address_space}"
   location             = "${var.location}"
-  resource_group_name  = var.resource_group_name  # Make sure var.resource_group_name is a string
+  resource_group_name  = "${var.resource_group}"
 }
 resource "azurerm_subnet" "test" {
   name                 = "${var.application_type}-${var.resource_type}-sub"
