@@ -16,13 +16,13 @@ terraform {
 }
 module "resource_group" {
   source               = "../../modules/resource_group"
-  resource_group       = "${var.resource_group}"
-  location             = "${var.location}"
+  resource_group       = var.resource_group
+  location             = var.location
 }
 module "network" {
   source               = "../../modules/network"
   address_space        = "${var.address_space}"
-  location             = "${var.location}"
+  location             = var.location
   virtual_network_name = "${var.virtual_network_name}"
   application_type     = "${var.application_type}"
   resource_type        = "NET"
@@ -41,14 +41,14 @@ module "nsg-test" {
 }
 module "appservice" {
   source           = "../../modules/appservice"
-  location         = "${var.location}"
+  location         = var.location
   application_type = "${var.application_type}"
   resource_type    = "AppService"
   resource_group   = "${module.resource_group.resource_group_name}"
 }
 module "publicip" {
   source           = "../../modules/publicip"
-  location         = "${var.location}"
+  location         = var.location
   application_type = "${var.application_type}"
   resource_type    = "publicip"
   resource_group   = "${module.resource_group.resource_group_name}"
