@@ -19,3 +19,8 @@ resource "azurerm_linux_web_app" "test" {
     always_on = false
   }
 }
+
+variable "resource_group_name" {
+  type = string
+  description = "The name of the resource group for the app service"
+}
