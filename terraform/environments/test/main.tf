@@ -26,7 +26,7 @@ module "network" {
   virtual_network_name = "${var.virtual_network_name}"
   application_type     = "${var.application_type}"
   resource_type        = "NET"
-  resource_group       = "${module.resource_group.resource_group_name}"
+  resource_group_name       = "${module.resource_group.resource_group_name}"
   address_prefix_test  = "${var.address_prefix_test}"
 }
 
@@ -35,7 +35,7 @@ module "nsg-test" {
   location         = var.location
   application_type = "${var.application_type}"
   resource_type    = "NSG"
-  resource_group   = "${module.resource_group.resource_group_name}"
+  resource_group_name   = "${module.resource_group.resource_group_name}"
   subnet_id        = "${module.network.subnet_id_test}"
   address_prefix_test = "${var.address_prefix_test}"
 }
@@ -51,5 +51,5 @@ module "publicip" {
   location         = var.location
   application_type = "${var.application_type}"
   resource_type    = "publicip"
-  resource_group   = "${module.resource_group.resource_group_name}"
+  resource_group_name   = "${module.resource_group.resource_group_name}"
 }
