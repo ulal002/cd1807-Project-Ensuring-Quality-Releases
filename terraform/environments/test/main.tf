@@ -44,7 +44,7 @@ module "appservice" {
   location         = var.location
   application_type = "${var.application_type}"
   resource_type    = "AppService"
-  resource_group   = "Udacity-Urvesh"
+  resource_group_name = "${module.resource_group.resource_group_name}"
 }
 module "publicip" {
   source           = "../../modules/publicip"
