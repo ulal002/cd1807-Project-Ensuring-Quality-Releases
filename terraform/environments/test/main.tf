@@ -16,7 +16,7 @@ terraform {
 }
 module "resource_group" {
   source               = "../../modules/resource_group"
-  resource_group       = var.resource_group
+  resource_group       = var.resource_group_name
   location             = var.location
 }
 module "network" {
@@ -32,7 +32,7 @@ module "network" {
 
 module "nsg-test" {
   source           = "../../modules/networksecuritygroup"
-  location         = "${var.location}"
+  location         = var.location
   application_type = "${var.application_type}"
   resource_type    = "NSG"
   resource_group   = "${module.resource_group.resource_group_name}"
