@@ -6,8 +6,8 @@ tenant_id = "81077361-59fb-4ef9-a212-7cfb9758e026"
 
 # Resource Group/Location
 location = "East US"
-resource_group_name = "Udacity-Urvesh"
-application_type = "flask-webappP3"
+resource_group_name = "Udacity-Urvesh-P3"
+application_type = "flask-webapp-P3"
 
 # Network
 virtual_network_name = "flask-webappP3-NET"
