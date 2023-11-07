@@ -89,6 +89,11 @@ stages:
     #     environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
 
 #--------------------------------------------#    
+     - task: NodeTool@0
+      displayName: Install Node v18.X
+      inputs:
+        versionSpec: '18.x'
+        checkLatest: true
     # Postman - Install Newman    
     # ToDo: Update the command and verify the working directory
     - task: CmdLine@2
