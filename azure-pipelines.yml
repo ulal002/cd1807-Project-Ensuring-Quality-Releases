@@ -89,7 +89,7 @@ stages:
     #     environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
 
 #--------------------------------------------#    
-     - task: NodeTool@0
+    - task: NodeTool@0
       displayName: Install Node v18.X
       inputs:
         versionSpec: '18.x'
