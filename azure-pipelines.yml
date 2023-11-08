@@ -107,7 +107,7 @@ stages:
       displayName: Run Data Validation Tests
       continueOnError: true
       inputs:
-        script: 'newman run TestSuite.Regression.json -e TestSuite.Regression.environment.json --delay-request 5000 --bail -x --reporters cli,junit --reporter-junit-export TEST-Regression.xml'
+        script: 'newman run automatedtesting/postmanTestSuite.Regression.json -e TestSuite.Regression.environment.json --delay-request 5000 --bail -x --reporters cli,junit --reporter-junit-export TEST-Regression.xml'
         #script: 'newman run TestSuite.Data-Validation.json -e TestSuite.Data-Vailidation.environment.json --reporters cli,junit --reporter-junit-export TEST-DataValidation.xml'
         workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
     # Postman Regression Test Suite    
@@ -116,9 +116,9 @@ stages:
       displayName: Run Regression Tests
       continueOnError: true
       inputs:
-        script: 'newman run TestSuite.Regression.json -e TestSuite.Regression.environment.json --delay-request 5000 --bail -x --reporters cli,junit --reporter-junit-export TEST-Regression.xml'
+        script: 'newman run automatedtesting/postmanTestSuite.Regression.json -e TestSuite.Regression.environment.json --delay-request 5000 --bail -x --reporters cli,junit --reporter-junit-export TEST-Regression.xml'
         #script: 'newman run TestSuite.Regression.json -e TestSuite.Regression.environment.json --reporters cli,junit --reporter-junit-export TEST-Regression.xml'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
     # Postman - Publish Results 
     # ToDo: Complete the task as explained here: https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-test-results?view=azure-devops&tabs=trx%2Cyaml#yaml-snippet
     - task: PublishTestResults@2
