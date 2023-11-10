@@ -20,11 +20,6 @@ terraform {
     access_key           = "VxHIHtqeyn9UN2SsC7qYGlUCB9XMYS26LKKioxvwCfKlG4+7UCuoDfLoRiLrb4b8rrkylws0nLjt+AStexIzSA=="
   }
 }
-module "resource_group" {
-  source               = "../../modules/resource_group"
-  resource_group       = "${var.resource_group}"
-  location             = var.location
-}
 module "network" {
   source               = "../../modules/network"
   address_space        = "${var.address_space}"
@@ -34,4 +29,9 @@ module "network" {
   resource_type        = "NET"
   resource_group       = "${module.resource_group.resource_group_name}"
   address_prefix_test  = "${var.address_prefix_test}"
+}
+module "resource_group" {
+  source               = "../../modules/resource_group"
+  resource_group       = "${var.resource_group}"
+  location             = var.location
 }
