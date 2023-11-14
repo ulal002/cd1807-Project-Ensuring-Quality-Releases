@@ -19,8 +19,8 @@ module "resource_group" {
   resource_group_name  = "${var.resource_group_name}"
   location             = "${var.location}"
 }
-output "rg_name_type" {
-  value = type(module.resource_group.resource_group_name)
+output "rg_name_value" {
+  value = module.resource_group.resource_group_name
 }
 module "network" {
   source               = "../../modules/network"
