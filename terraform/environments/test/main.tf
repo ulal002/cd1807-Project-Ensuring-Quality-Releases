@@ -19,9 +19,6 @@ module "resource_group" {
   resource_group_name  = "${var.resource_group_name}"
   location             = "${var.location}"
 }
-output "rg_name_value" {
-  value = module.resource_group.resource_group_name
-}
 module "network" {
   source               = "../../modules/network"
   address_space        = "${var.address_space}"
