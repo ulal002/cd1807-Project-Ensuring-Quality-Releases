@@ -1,8 +1,5 @@
 # Resource Group
-variable "resource_group_name" {
-  type    = string
-  description = "Name of the Azure resource group"
-}
+variable resource_group_name {}
 variable location {}
 # Network
 variable virtual_network_name {}
