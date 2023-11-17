@@ -112,7 +112,7 @@ stages:
         script: 'newman run automatedtesting/postman/TestSuite.Data-Validation.json -e automatedtesting/postman/TestSuite.Data-Validation.environment.json --delay-request 5000 --bail -x --reporters cli,junit --reporter-junit-export TEST-DataValidation.xml'
         #script: '$(npm bin -g)/newman run automatedtesting/postman/TestSuite.Data-Vailidation.json -e TestSuite.Data-Vailidation.environment.json --delay-request 5000 --bail -x --reporters cli,junit --reporter-junit-export TEST-DataValidation.xml'
         #script: 'newman run TestSuite.Data-Validation.json -e TestSuite.Data-Vailidation.environment.json --reporters cli,junit --reporter-junit-export TEST-DataValidation.xml'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
     # Postman Regression Test Suite    
     ## ToDo: Verify the working directory
     - task: CmdLine@2
