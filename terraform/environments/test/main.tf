@@ -28,6 +28,7 @@ module "network" {
   resource_type        = "NET"
   resource_group_name  = module.resource_group.resource_group_name
   address_prefix_test  = "${var.address_prefix_test}"
+  depends_on           = [module.resource_group]
 }
 module "nsg-test" {
   source           = "../../modules/networksecuritygroup"
