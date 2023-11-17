@@ -102,7 +102,7 @@ stages:
         script: |
           npm install -g newman
           echo "##vso[task.prependpath]$(npm bin -g)"
-      workingDirectory: $(System.DefaultWorkingDirectory)
+        workingDirectory: $(System.DefaultWorkingDirectory)
     # Postman Data Validation Test Suite    
     ## ToDo: Verify the working directory
     - task: CmdLine@2
