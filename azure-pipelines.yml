@@ -99,10 +99,9 @@ stages:
     - task: CmdLine@2
       displayName: Install Newman
       inputs:
-    - script: |
-       npm install -g newman
-       echo "##vso[task.prependpath]$(npm bin -g)"
-      displayName: 'Install Newman and update PATH'
+        script: |
+          npm install -g newman
+          echo "##vso[task.prependpath]$(npm bin -g)"
       workingDirectory: $(System.DefaultWorkingDirectory)
     # Postman Data Validation Test Suite    
     ## ToDo: Verify the working directory
