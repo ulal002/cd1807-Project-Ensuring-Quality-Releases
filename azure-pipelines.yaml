@@ -105,7 +105,7 @@ stages:
       displayName: Run Data Validation Tests
       continueOnError: true
       inputs:
-        script: '`npm bin -g`/newman run automatedtesting/postman/TestSuite.Data-Vailidation.json -e TestSuite.Data-Vailidation.environment.json --delay-request 5000 --bail -x --reporters cli,junit --reporter-junit-export TEST-Regression.xml'
+        script: '`npm bin -g`/newman run automatedtesting/postman/TestSuite.Data-Vailidation.json -e TestSuite.Data-Vailidation.environment.json --delay-request 5000 --bail -x --reporters cli,junit --reporter-junit-export TestSuite.Data-Vailidation.xml'
         workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
     # Postman Regression Test Suite    
     # ToDo: Verify the working directory
