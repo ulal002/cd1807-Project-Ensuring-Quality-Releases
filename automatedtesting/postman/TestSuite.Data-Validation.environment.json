@@ -4,7 +4,7 @@
 	"values": [
 		{
 			"key": "url",
-			"value": "http://dummy.restapiexample.com",
+			"value": "https://dummy.restapiexample.com",
 			"enabled": true
 		},
 		{
