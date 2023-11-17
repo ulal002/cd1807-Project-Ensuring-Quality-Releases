@@ -1,3 +1,3 @@
 output "resource_group_name" {
-  value = azurerm_resource_group.Udacity-Urvesh-Test
+  value = azurerm_resource_group.Udacity-Urvesh-Test.name
 }
