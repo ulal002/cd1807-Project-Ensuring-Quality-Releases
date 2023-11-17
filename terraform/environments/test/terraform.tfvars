@@ -7,9 +7,9 @@ tenant_id = "81077361-59fb-4ef9-a212-7cfb9758e026"
 # Resource Group/Location
 location = "East US"
 resource_group_name = "Udacity-Urvesh-new"
-application_type = "flask-webappP3"
+application_type = "flask-webappP3-new"
 
 # Network
-virtual_network_name = "flask-webappP3-NET"
+virtual_network_name = "flask-webappP3-NET-new"
 address_space = ["10.5.0.0/16"]
 address_prefix_test = "10.5.1.0/24"
