@@ -120,6 +120,7 @@ stages:
       continueOnError: true
       inputs:
         script: 'newman run automatedtesting/postman/TestSuite.Regression.json -e automatedtesting/postman/TestSuite.Regression.environment.json --delay-request 5000 --bail -x --reporters cli,junit --reporter-junit-export TEST-Regression.xml'
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
     # Postman - Publish Results 
     # ToDo: Complete the task as explained here: https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-test-results?view=azure-devops&tabs=trx%2Cyaml#yaml-snippet
     - task: PublishTestResults@2
