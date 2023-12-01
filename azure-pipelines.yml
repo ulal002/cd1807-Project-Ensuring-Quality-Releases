@@ -41,7 +41,7 @@ stages:
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
         backendServiceArm: '$(azureServiceConnectionId)'
-        backendAzureRmResourceGroupName: 'Udacity-Urvesh'
+        backendAzureRmResourceGroupName: 'Udacity-Urvesh-new'
         backendAzureRmStorageAccountName: 'tfstate1338746'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
@@ -196,8 +196,8 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App'
             inputs:
-              azureSubscription: '21224261-cd5e-4fe3-8b0b-e801db489c32'
-              #azureSubscription: '$(azureServiceConnectionId)'     ## ToDo
+              #azureSubscription: '21224261-cd5e-4fe3-8b0b-e801db489c32'
+              azureSubscription: '$(azureServiceConnectionId)'     ## ToDo
               appName: 'flask-webappP3-new-AppService'               ## ToDo
               appType: webApp
               package: $(Pipeline.Workspace)/$(Build.BuildId)-fakerestapi.zip      ## ToDo: Use the published zip artifact. 
@@ -219,7 +219,7 @@ stages:
   - deployment: VMDeploy
     displayName: Selenium Tests
     environment:
-      name: 'MyLinuxVM2'         ## ToDo: Change/provide a name
+      name: 'MyLinuxVM'         ## ToDo: Change/provide a name
       resourceType: VirtualMachine
       tags: selenium
     strategy:
