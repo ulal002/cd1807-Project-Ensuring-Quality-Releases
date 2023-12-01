@@ -198,7 +198,7 @@ stages:
             inputs:
               azureSubscription: '21224261-cd5e-4fe3-8b0b-e801db489c32'
               #azureSubscription: '$(azureServiceConnectionId)'     ## ToDo
-              appName: 'flask-webappP3-new'               ## ToDo
+              appName: 'flask-webappP3-new-AppService'               ## ToDo
               appType: webApp
               package: $(Pipeline.Workspace)/$(Build.BuildId)-fakerestapi.zip      ## ToDo: Use the published zip artifact. 
           #--------------------------------------------#    
