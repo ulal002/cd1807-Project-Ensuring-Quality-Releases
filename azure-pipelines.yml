@@ -129,7 +129,7 @@ stages:
       inputs:
         testResultsFormat: 'JUnit'
         testResultsFiles: 'TEST-Regression.xml'
-        searchFolder: 'automatedtesting/postman'
+        searchFolder: '$(System.DefaultWorkingDirectory)'
         mergeTestResults: true
         testRunTitle: Data and Regression Tests
 
