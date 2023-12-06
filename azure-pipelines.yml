@@ -157,8 +157,8 @@ stages:
         rootFolderOrFile: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/fakerestapi"
         includeRootFolder: false
         archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip'
-    - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip
+        archiveFile: '$(Build.ArtifactStagingDirectory)/fakerestapi.zip'
+    - publish: $(Build.ArtifactStagingDirectory)/fakerestapi.zip
       displayName: 'Upload Package'
       artifact: drop-fakerestapi
 
@@ -171,9 +171,9 @@ stages:
         rootFolderOrFile: '$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/'
         includeRootFolder: false
         archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/perftests.zip'
     # JMeter Test Suite - Publish    
-    - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip
+    - publish: $(Build.ArtifactStagingDirectory)/perftests.zip
       displayName: 'Upload Package'
       artifact: drop-perftests
 
