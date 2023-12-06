@@ -186,10 +186,6 @@ stages:
   # Deploy FakeRestAPI Web App
   # ToDo: Provide <environment name> you created in your DevOps project
   #Below to confirm if Web App is in the correct RG
-  - script: |
-    echo "Checking Azure Web App existence:"
-    az webapp show --name flask-webappP3-new-AppService --resource-group Udacity-Urvesh-new
-
   - deployment: FakeRestAPI
     pool:
       vmImage: 'ubuntu-latest'     
@@ -201,6 +197,9 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App'
             inputs:
+              script: |
+                echo "Checking Azure Web App existence:"
+                az webapp show --name flask-webappP3-new-AppService --resource-group Udacity-Urvesh-new
               #azureSubscription: '21224261-cd5e-4fe3-8b0b-e801db489c32'
               azureSubscription: '$(azureServiceConnectionId)'     ## ToDo
               appName: 'flask-webappP3-new-AppService'               ## ToDo
