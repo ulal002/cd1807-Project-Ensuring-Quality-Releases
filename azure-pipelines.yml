@@ -128,8 +128,7 @@ stages:
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: 'JUnit'
-        testResultsFiles: '*.xml'
-        workingDirectory: '$(System.DefaultWorkingDirectory)'
+        testResultsFiles: 'TEST-Regression.xml'
         searchFolder: 'automatedtesting/postman'
         mergeTestResults: true
         testRunTitle: Data and Regression Tests
