@@ -201,8 +201,8 @@ stages:
               azureSubscription: '$(azureServiceConnectionId)'     ## ToDo
               appName: 'flask-webappP3-new-AppService'               ## ToDo
               appType: webApp
-              package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-drop-fakerestapi/fakerestapi.zip      ## ToDo: Use the published zip artifact.
-             
+              package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip
+              
           #--------------------------------------------#    
           # Run JMeter test suite against the App Service
           - task: CmdLine@2
