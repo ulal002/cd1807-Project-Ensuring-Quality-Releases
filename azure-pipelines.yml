@@ -185,6 +185,11 @@ stages:
   #--------------------------------------------#  
   # Deploy FakeRestAPI Web App
   # ToDo: Provide <environment name> you created in your DevOps project
+  #Below to confirm if Web App is in the correct RG
+  - script: |
+    echo "Checking Azure Web App existence:"
+    az webapp show --name flask-webappP3-new-AppService --resource-group Udacity-Urvesh-new
+
   - deployment: FakeRestAPI
     pool:
       vmImage: 'ubuntu-latest'     
@@ -201,7 +206,7 @@ stages:
               appName: 'flask-webappP3-new-AppService'               ## ToDo
               appType: webApp
               package: $(Pipeline.Workspace)/$(Build.BuildId)-fakerestapi.zip      ## ToDo: Use the published zip artifact.
-              resourceGroupName: 'Udacity-Urvesh-new'
+             
           #--------------------------------------------#    
           # Run JMeter test suite against the App Service
           - task: CmdLine@2
