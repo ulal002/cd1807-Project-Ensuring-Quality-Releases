@@ -200,7 +200,8 @@ stages:
               azureSubscription: '$(azureServiceConnectionId)'     ## ToDo
               appName: 'flask-webappP3-new-AppService'               ## ToDo
               appType: webApp
-              package: $(Pipeline.Workspace)/$(Build.BuildId)-fakerestapi.zip      ## ToDo: Use the published zip artifact. 
+              package: $(Pipeline.Workspace)/$(Build.BuildId)-fakerestapi.zip      ## ToDo: Use the published zip artifact.
+              resourceGroupName: 'Udacity-Urvesh-new'
           #--------------------------------------------#    
           # Run JMeter test suite against the App Service
           - task: CmdLine@2
