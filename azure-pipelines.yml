@@ -251,11 +251,15 @@ stages:
                 cd app
                 unzip -o uitests.zip
                 FILE=/home/urveshlal1/app/chromedriver_linux64.zip
+                CHROMEDRIVER_VERSION=119.0.6045.105
                 if [ ! -f "$FILE" ]; then
                     LATEST=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-                    wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
-                    unzip -o chromedriver_linux64.zip
+                    wget http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip -O $FILE
+                    unzip -o $FILE
                     sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
+                    # wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
+                    # unzip -o chromedriver_linux64.zip
+                    # sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                 fi
                 export PATH=$PATH:/home/urveshlal1/app
                 #export PATH=$PATH:/home/urveshlal1/azagent/azagent/_work/1/drop-uitests
