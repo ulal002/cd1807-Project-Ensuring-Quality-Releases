@@ -250,7 +250,6 @@ stages:
                 mv /home/urveshlal1/azagent/azagent/_work/1/drop-uitests/uitests.zip app
                 cd app
                 unzip -o uitests.zip
-                
                 FILE=/home/urveshlal1/app/chromedriver_linux64.zip
                 CHROME_VERSION=$(google-chrome --version | cut -d ' ' -f 3 | cut -d '.' -f 1)
                 CHROMEDRIVER_VERSION=$(wget -q -O - "http://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
