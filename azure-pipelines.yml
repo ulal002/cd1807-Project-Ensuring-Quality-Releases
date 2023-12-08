@@ -250,16 +250,15 @@ stages:
                 mv /home/urveshlal1/azagent/azagent/_work/1/drop-uitests/uitests.zip app
                 cd app
                 unzip -o uitests.zip
-                FILE=/home/urveshlal1/app/chromedriver_linux64.zip
-                CHROME_VERSION=$(google-chrome --version | cut -d ' ' -f 3 | cut -d '.' -f 1)
-                CHROMEDRIVER_VERSION=$(wget -q -O - "http://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+                FILE=/home/testuser/app/chromedriver_linux64.zip
                 if [ ! -f "$FILE" ]; then
-                    wget "http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" -O $FILE
-                    unzip -o $FILE
+                    CHROME_VERSION=$(chromium-browser --version | grep -oP "(?<=Chromium )[\d\.]+")
+                    CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+                    wget "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
+                    unzip -o chromedriver_linux64.zip
                     sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                 fi
-                export PATH=$PATH:/home/urveshlal1/app
-                #export PATH=$PATH:/home/urveshlal1/azagent/azagent/_work/1/drop-uitests
+                export PATH=$PATH:/home/testuser/app
                 echo "Starting Selenium Tests"
                 python3 add_remove_from_cart.py --headless >> selenium.log
                 echo "Completed Selenium Tests. Check selenium.log for results."
