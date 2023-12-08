@@ -261,5 +261,5 @@ stages:
                 export PATH=$PATH:/home/urveshlal1/app
                 #export PATH=$PATH:/home/urveshlal1/azagent/azagent/_work/1/drop-uitests
                 echo "Starting Selenium Tests"
-                python3 add_remove_from_cart.py >> selenium.log
+                python3 add_remove_from_cart.py --headless >> selenium.log
                 echo "Completed Selenium Tests. Check selenium.log for results."
