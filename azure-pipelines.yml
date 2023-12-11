@@ -252,10 +252,8 @@ stages:
                 unzip -o uitests.zip
                 FILE=/home/testuser/app/chromedriver_linux64.zip
                 if [ ! -f "$FILE" ]; then
-                    CHROME_VERSION=$(chromium-browser --version | grep -oP "(?<=Chromium )[\d\.]+")
-                    CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-                    wget "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
-                    unzip -o chromedriver_linux64.zip
+                    wget "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/119.0.6045.105/linux64/chromedriver-linux64.zip"
+                    unzip -o chromedriver-linux64.zip
                     sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                 fi
                 export PATH=$PATH:/home/testuser/app
