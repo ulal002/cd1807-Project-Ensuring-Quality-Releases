@@ -250,13 +250,13 @@ stages:
                 mv /home/urveshlal1/azagent/azagent/_work/1/drop-uitests/uitests.zip app
                 cd app
                 unzip -o uitests.zip
-                FILE=/home/testuser/app/chromedriver_linux64.zip
+                FILE=/home/urveshlal1/app/chromedriver_linux64.zip
                 if [ ! -f "$FILE" ]; then
                     wget "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/119.0.6045.105/linux64/chromedriver-linux64.zip"
                     unzip -o chromedriver-linux64.zip
                     sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                 fi
-                export PATH=$PATH:/home/testuser/app
+                export PATH=$PATH:/home/urveshlal1/app
                 echo "Starting Selenium Tests"
                 python3 add_remove_from_cart.py >> selenium.log
                 echo "Completed Selenium Tests. Check selenium.log for results."
