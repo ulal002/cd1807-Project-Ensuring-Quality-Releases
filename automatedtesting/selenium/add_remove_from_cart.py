@@ -16,8 +16,8 @@ def login(user, password):
     print(timestamp() + 'Browser started successfully. Navigating to the demo page to login.')
     driver.get('https://www.saucedemo.com/')
     from pyvirtualdisplay import Display
-display = Display(visible=0, size=(1920, 1080))
-display.start()
+    display = Display(visible=0, size=(1920, 1080))
+    display.start()
     return driver
 
 def add_cart(driver, n_items):
