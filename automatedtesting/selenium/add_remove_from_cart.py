@@ -12,9 +12,12 @@ def login(user, password):
     options = ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(options=options, executable_path="/usr/local/bin/chromedriver")
     print(timestamp() + 'Browser started successfully. Navigating to the demo page to login.')
     driver.get('https://www.saucedemo.com/')
+    from pyvirtualdisplay import Display
+display = Display(visible=0, size=(1920, 1080))
+display.start()
     return driver
 
 def add_cart(driver, n_items):
