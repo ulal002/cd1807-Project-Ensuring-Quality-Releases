@@ -12,7 +12,7 @@ def login(user, password):
     options = ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
-    driver = webdriver.Chrome(options=options, executable_path="/usr/local/bin/chromedriver")
+    driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver", options=options)
     print(timestamp() + 'Browser started successfully. Navigating to the demo page to login.')
     driver.get('https://www.saucedemo.com/')
     from pyvirtualdisplay import Display
