@@ -1,6 +1,7 @@
 # #!/usr/bin/env python
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.chrome.service import Service
 import datetime
 
 def timestamp():
@@ -12,8 +13,8 @@ def login(user, password):
     options = ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
-    service = Service(executable_path='/usr/local/bin/chromedriver') #Testing
-    driver = webdriver.Chrome(service=service, options=options) #Testing
+    service = Service(executable_path='/usr/local/bin/chromedriver')
+    driver = webdriver.Chrome(service=service, options=options)
     #driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver", options=options)
     print(timestamp() + 'Browser started successfully. Navigating to the demo page to login.')
     driver.get('https://www.saucedemo.com/')
