@@ -1,4 +1,5 @@
 # #!/usr/bin/env python
+import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.chrome.service import Service
