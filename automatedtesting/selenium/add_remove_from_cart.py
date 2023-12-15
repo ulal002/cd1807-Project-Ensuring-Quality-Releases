@@ -15,6 +15,7 @@ def login(user, password):
     options = ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
     service = Service(executable_path='/usr/local/bin/chromedriver')
     driver = webdriver.Chrome(service=service, options=options)
     #driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver", options=options)
