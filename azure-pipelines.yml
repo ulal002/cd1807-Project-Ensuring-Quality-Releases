@@ -252,7 +252,7 @@ stages:
                 unzip -o uitests.zip
                 FILE=/home/urveshlal1/app/chromedriver_linux64.zip
                 if [ ! -f "$FILE" ]; then
-                    wget "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/119.0.6045.105/linux64/chromedriver-linux64.zip"
+                    wget "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/linux64/chromedriver-linux64.zip"
                     unzip -o chromedriver-linux64.zip
                     sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                 fi
