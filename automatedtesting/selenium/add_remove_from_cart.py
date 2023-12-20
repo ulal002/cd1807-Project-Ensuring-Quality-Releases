@@ -29,27 +29,26 @@ def login(user, password):
 def add_cart(driver, n_items):
     for i in range(n_items):
         element = "a[id='item_" + str(i) + "_title_link']"
-        item_link = driver.find_element_by_css_selector(element)
+        item_link = driver.find_element(By.CSS_SELECTOR, element)
         item_link.click()
-        add_to_cart_button = driver.find_element_by_css_selector("button.btn_primary.btn_inventory")
+        add_to_cart_button = driver.find_element(By.CSS_SELECTOR, "button.btn_primary.btn_inventory")
         add_to_cart_button.click()
-        product = driver.find_element_by_css_selector("div[class='inventory_details_name']").text
+        product = driver.find_element(By.CSS_SELECTOR, "div[class='inventory_details_name']").text
         print(timestamp() + product + " added to the shopping cart.")
-        back_button = driver.find_element_by_css_selector("button.inventory_details_back_button")
+        back_button = driver.find_element(By.CSS_SELECTOR, "button.inventory_details_back_button")
         back_button.click()
     print(timestamp() + '{:d} items added to the shopping cart successfully.'.format(n_items))
-    
+
 def remove_cart(driver, n_items):
     for i in range(n_items):
         element = "a[id='item_" + str(i) + "_title_link']"
-        item_link = driver.find_element_by_css_selector(element)
+        item_link = driver.find_element(By.CSS_SELECTOR, element)
         item_link.click()
-
-        remove_from_cart_button = driver.find_element_by_css_selector("button.btn_secondary.btn_inventory")
+        remove_from_cart_button = driver.find_element(By.CSS_SELECTOR, "button.btn_secondary.btn_inventory")
         remove_from_cart_button.click()
-        product = driver.find_element_by_css_selector("div[class='inventory_details_name']").text
+        product = driver.find_element(By.CSS_SELECTOR, "div[class='inventory_details_name']").text
         print(timestamp() + product + " removed from the shopping cart.")
-        back_button = driver.find_element_by_css_selector("button.inventory_details_back_button")
+        back_button = driver.find_element(By.CSS_SELECTOR, "button.inventory_details_back_button")
         back_button.click()
     print(timestamp() + '{:d} items removed from the shopping cart successfully.'.format(n_items))
     
