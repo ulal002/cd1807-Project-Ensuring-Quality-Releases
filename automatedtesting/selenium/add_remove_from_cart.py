@@ -29,23 +29,30 @@ def login(user, password):
 def add_cart(driver, n_items):
     for i in range(n_items):
         element = "a[id='item_" + str(i) + "_title_link']"
-        driver.find_element_by_css_selector(element).click()
-        driver.find_element_by_css_selector("button.btn_primary.btn_inventory").click()
+        item_link = driver.find_element_by_css_selector(element)
+        item_link.click()
+        add_to_cart_button = driver.find_element_by_css_selector("button.btn_primary.btn_inventory")
+        add_to_cart_button.click()
         product = driver.find_element_by_css_selector("div[class='inventory_details_name']").text
         print(timestamp() + product + " added to the shopping cart.")
-        driver.find_element_by_css_selector("button.inventory_details_back_button").click()
+        back_button = driver.find_element_by_css_selector("button.inventory_details_back_button")
+        back_button.click()
     print(timestamp() + '{:d} items added to the shopping cart successfully.'.format(n_items))
-
+    
 def remove_cart(driver, n_items):
     for i in range(n_items):
         element = "a[id='item_" + str(i) + "_title_link']"
-        driver.find_element_by_css_selector(element).click()
-        driver.find_element_by_css_selector("button.btn_secondary.btn_inventory").click()
+        item_link = driver.find_element_by_css_selector(element)
+        item_link.click()
+
+        remove_from_cart_button = driver.find_element_by_css_selector("button.btn_secondary.btn_inventory")
+        remove_from_cart_button.click()
         product = driver.find_element_by_css_selector("div[class='inventory_details_name']").text
         print(timestamp() + product + " removed from the shopping cart.")
-        driver.find_element_by_css_selector("button.inventory_details_back_button").click()
+        back_button = driver.find_element_by_css_selector("button.inventory_details_back_button")
+        back_button.click()
     print(timestamp() + '{:d} items removed from the shopping cart successfully.'.format(n_items))
-
+    
 if __name__ == "__main__":
     N_ITEMS = 6
     TEST_USERNAME = 'standard_user'
