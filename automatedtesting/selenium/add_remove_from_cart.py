@@ -4,6 +4,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import datetime
 
 def timestamp():
@@ -30,8 +32,10 @@ def login(user, password):
 def add_cart(driver, n_items):
     for i in range(n_items):
         element = "a[id='item_" + str(i) + "_title_link']"
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, element)))
         item_link = driver.find_element(By.CSS_SELECTOR, element)
         item_link.click()
+        print(driver.page_source)
         add_to_cart_button = driver.find_element(By.CSS_SELECTOR, "button.btn_primary.btn_inventory")
         add_to_cart_button.click()
         product = driver.find_element(By.CSS_SELECTOR, "div[class='inventory_details_name']").text
