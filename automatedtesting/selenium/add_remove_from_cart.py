@@ -14,12 +14,13 @@ def timestamp():
 def login(user, password):
     print("Current working directory:", os.getcwd())
     print(timestamp() + 'Starting the browser...')
+    chromedriver_path = '/usr/local/bin/chromedriver'
     options = ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-    options.add_argument(f"executable_path={chromedriver_path}")
-    chromedriver_path = '/usr/local/bin/chromedriver'
+    driver = webdriver.Chrome(executable_path=chromedriver_path, options=options)
+    #options.add_argument(f"executable_path={chromedriver_path}")
     print(timestamp() + 'Browser started successfully. Navigating to the demo page to login.')
     driver.get('https://www.saucedemo.com/')
     
