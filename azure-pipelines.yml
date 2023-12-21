@@ -230,9 +230,9 @@ stages:
               artifact: 'jmeter-html-report'
               publishLocation: 'pipeline'
 
-          - task: PublishHTML@1
+          - task: PublishHTML@2
             inputs:
-              htmlFolder: '$(Build.ArtifactStagingDirectory)/jmeter-html-report'
+              htmlFolder: '$(Pipeline.Workspace)/drop-perftests/apache-jmeter-5.2.1/report'
               indexFile: 'index.html'
               reportName: 'Published HTML'
               reportTitle: 'Published HTML Report'
