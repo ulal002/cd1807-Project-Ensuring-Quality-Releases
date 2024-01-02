@@ -7,6 +7,8 @@ trigger:
 # Otherwise, comment out the line below. 
 pool: MyAgentPool
 
+timeoutInMinutes: 60
+
 variables:
   python.version: '3.8.10'
   ## ToDo: Replace the service connection name as used in the DevOps project settings
