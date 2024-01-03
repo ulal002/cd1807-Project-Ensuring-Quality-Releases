@@ -1,17 +1,17 @@
-[2023-12-21 13:15:21] Starting the browser...
-[2023-12-21 13:15:22] Browser started successfully. Navigating to the demo page to login.
-[2023-12-21 13:15:24] Sauce Labs Bike Light added to the shopping cart.
-[2023-12-21 13:15:25] Sauce Labs Bolt T-Shirt added to the shopping cart.
-[2023-12-21 13:15:25] Sauce Labs Onesie added to the shopping cart.
-[2023-12-21 13:15:25] Test.allTheThings() T-Shirt (Red) added to the shopping cart.
-[2023-12-21 13:15:25] Sauce Labs Backpack added to the shopping cart.
-[2023-12-21 13:15:25] Sauce Labs Fleece Jacket added to the shopping cart.
-[2023-12-21 13:15:25] 6 items added to the shopping cart successfully.
-[2023-12-21 13:15:25] Sauce Labs Bike Light removed from the shopping cart.
-[2023-12-21 13:15:25] Sauce Labs Bolt T-Shirt removed from the shopping cart.
-[2023-12-21 13:15:25] Sauce Labs Onesie removed from the shopping cart.
-[2023-12-21 13:15:25] Test.allTheThings() T-Shirt (Red) removed from the shopping cart.
-[2023-12-21 13:15:25] Sauce Labs Backpack removed from the shopping cart.
-[2023-12-21 13:15:25] Sauce Labs Fleece Jacket removed from the shopping cart.
-[2023-12-21 13:15:25] 6 items removed from the shopping cart successfully.
-[2023-12-21 13:15:25] Selenium tests are all successfully completed!
+Starting the browser...
+Browser started successfully. Navigating to the demo page to login.
+Sauce Labs Bike Light added to the shopping cart.
+Sauce Labs Bolt T-Shirt added to the shopping cart.
+Sauce Labs Onesie added to the shopping cart.
+Test.allTheThings() T-Shirt (Red) added to the shopping cart.
+Sauce Labs Backpack added to the shopping cart.
+Sauce Labs Fleece Jacket added to the shopping cart.
+6 items added to the shopping cart successfully.
+Sauce Labs Bike Light removed from the shopping cart.
+Sauce Labs Bolt T-Shirt removed from the shopping cart.
+Sauce Labs Onesie removed from the shopping cart.
+Test.allTheThings() T-Shirt (Red) removed from the shopping cart.
+Sauce Labs Backpack removed from the shopping cart.
+Sauce Labs Fleece Jacket removed from the shopping cart.
+6 items removed from the shopping cart successfully.
+Selenium tests are all successfully completed!
