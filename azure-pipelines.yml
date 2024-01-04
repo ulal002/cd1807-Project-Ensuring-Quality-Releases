@@ -73,13 +73,13 @@ stages:
     - task: TerraformTaskV3@3
       displayName: Terraform apply
       inputs:
-      timeoutInMinutes: 30
         provider: 'azurerm'
         command: 'apply'
         workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
         environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
         terraformVersion: '1.6.6'
         additionalCommandLineArguments: '-auto-approve -debug'
+      timeoutInMinutes: 30
 
     # ToDo: Change the workingDirectory path, as applicable to you
     # Destroy the resources in Azure by running a separate pipeline. 
