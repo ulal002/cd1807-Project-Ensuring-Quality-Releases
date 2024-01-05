@@ -1,5 +1,5 @@
 #!/bin/bash
-RESOURCE_GROUP_NAME="Udacity-Urvesh"
+RESOURCE_GROUP_NAME="Udacity_Urvesh_new"
 STORAGE_ACCOUNT_NAME="tfstate$RANDOM$RANDOM"
 CONTAINER_NAME="tfstate"
 
