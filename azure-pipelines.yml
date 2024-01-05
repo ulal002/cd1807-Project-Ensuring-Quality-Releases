@@ -41,7 +41,7 @@ stages:
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
         backendServiceArm: '$(azureServiceConnectionId)'
-        backendAzureRmResourceGroupName: 'Udacity-Urvesh-new'
+        backendAzureRmResourceGroupName: 'Udacity_Urvesh_new'
         backendAzureRmStorageAccountName: 'tfstate1338746'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
