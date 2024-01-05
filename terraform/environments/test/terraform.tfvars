@@ -6,7 +6,7 @@ tenant_id = "81077361-59fb-4ef9-a212-7cfb9758e026"
 
 # Resource Group/Location
 location = "East US"
-resource_group_name = "Udacity-Urvesh-new"
+resource_group_name = "Udacity_Urvesh_new"
 application_type = "flask-webappP3-new"
 
 # Network
