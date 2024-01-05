@@ -217,7 +217,7 @@ stages:
                 ls -R $(Pipeline.Workspace)/drop-perftests 
                 ./apache-jmeter-5.2.1/bin/jmeter -n -t PerformanceTestSuite.jmx -j jmeter.log -f
                 cat jmeter.log                                                                        
-              workingDirectory: $(Pipeline.Workspace)/drop-perftests           #ToDo: Use the artifact name from the task above
+              workingDirectory: '$(Build.ArtifactStagingDirectory)/perftests.zip'           #ToDo: Use the artifact name from the task above $(Pipeline.Workspace)/drop-perftests
 
           # Archive JMeter HTML report
           - task: ArchiveFiles@2
