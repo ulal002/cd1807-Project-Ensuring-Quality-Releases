@@ -209,8 +209,11 @@ stages:
           #--------------------------------------------#    
           - task: CmdLine@2
             inputs:
-              script: 'ls -R $(Pipeline.Workspace)/drop-perftests/apache-jmeter-5.2.1'
-              workingDirectory: $(Pipeline.Workspace)/drop-perftests
+              script: |
+                pwd
+                ls -R $(Pipeline.Workspace)/drop-perftests
+                ls -R $(Pipeline.Workspace)/drop-perftests/apache-jmeter-5.2.1
+              workingDirectory: $(Pipeline.Workspace)
   
           # Run JMeter test suite against the App Service
           - task: CmdLine@2
