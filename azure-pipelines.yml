@@ -222,7 +222,7 @@ stages:
           # Archive JMeter HTML report
           - task: ArchiveFiles@2
             inputs:
-              rootFolderOrFile: '$(Pipeline.Workspace)/drop-perftests/apache-jmeter-5.2.1/report'
+              rootFolderOrFile: '$(Pipeline.Workspace)/drop-perftests/apache-jmeter-5.2.1'
               includeRootFolder: false
               archiveType: 'zip'
               archiveFile: '$(Build.ArtifactStagingDirectory)/jmeter-html-report.zip'
@@ -230,7 +230,7 @@ stages:
           # Publish JMeter HTML report
           - task: PublishPipelineArtifact@1
             inputs:
-              targetPath: '$(Pipeline.Workspace)/drop-perftests/apache-jmeter-5.2.1/report'
+              targetPath: '$(Pipeline.Workspace)/drop-perftests/apache-jmeter-5.2.1'
               artifact: 'jmeter-html-report'
               publishLocation: 'pipeline'
   
