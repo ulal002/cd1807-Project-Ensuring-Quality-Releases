@@ -206,15 +206,7 @@ stages:
               appType: webApp
               package: $(Pipeline.Workspace)/drop-fakerestapi/fakerestapi.zip
               
-          #--------------------------------------------#    
-          - task: CmdLine@2
-            inputs:
-              script: |
-                pwd
-                ls -R $(Pipeline.Workspace)/drop-perftests
-                ls -R $(Pipeline.Workspace)/drop-perftests/apache-jmeter-5.2.1
-              workingDirectory: $(Pipeline.Workspace)
-  
+          #--------------------------------------------#   
           # Run JMeter test suite against the App Service
           - task: CmdLine@2
             inputs:
@@ -226,6 +218,14 @@ stages:
                 ./apache-jmeter-5.2.1/bin/jmeter -n -t PerformanceTestSuite.jmx -j jmeter.log -f
                 cat jmeter.log                                                                        
               workingDirectory: $(Pipeline.Workspace)/drop-perftests           #ToDo: Use the artifact name from the task above 
+              
+          # Archive JMeter HTML report
+          - task: ArchiveFiles@2
+            inputs:
+              rootFolderOrFile: '$(Pipeline.Workspace)/drop-perftests/apache-jmeter-5.2.1'
+              includeRootFolder: false
+              archiveType: 'zip'
+              archiveFile: '$(Build.ArtifactStagingDirectory)/jmeter-html-report.zip'
               
           # Publish JMeter HTML report
           - task: PublishPipelineArtifact@1
