@@ -191,7 +191,6 @@ stages:
 - stage: Deploy
   jobs:
   - deployment: FakeRestAPI
-    pool: MyAgentPool3   
     environment: 'MyLinuxVM2'
     strategy:
       runOnce:
