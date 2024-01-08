@@ -160,6 +160,7 @@ stages:
         includeRootFolder: false
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/fakerestapi.zip'
+        
     - publish: $(Build.ArtifactStagingDirectory)/fakerestapi.zip
       displayName: 'Upload Package'
       artifact: drop-fakerestapi
@@ -239,10 +240,6 @@ stages:
     displayName: Selenium Tests
     pool:
       name: MyAgentPool3
-    environment:
-      name: 'MyLinuxVM2'         ## ToDo: Change/provide a name
-      resourceType: VirtualMachine
-      tags: selenium
     strategy:
       runOnce:
         deploy:
