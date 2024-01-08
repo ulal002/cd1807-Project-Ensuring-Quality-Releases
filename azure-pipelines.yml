@@ -238,6 +238,7 @@ stages:
   # ToDo: 
   - deployment: VMDeploy
     displayName: Selenium Tests
+    dependsOn: RunJMeterAndPublishReport
     pool:
       name: MyAgentPool3
     environment:
