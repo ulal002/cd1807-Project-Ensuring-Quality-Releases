@@ -240,6 +240,10 @@ stages:
     displayName: Selenium Tests
     pool:
       name: MyAgentPool3
+    environment:
+      name: 'MyLinuxVM2'         ## ToDo: Change/provide a name
+      resourceType: VirtualMachine
+      tags: selenium
     strategy:
       runOnce:
         deploy:
