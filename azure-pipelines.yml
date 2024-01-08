@@ -234,11 +234,13 @@ stages:
 #--------------------------------------------#  
 # Selenium | Functional UI Tests
 # ToDo:
-jobs:
-- job: SeleniumTests_Deploy_MyLinuxVM2
-  dependsOn: RunJMeterAndPublishReport
-  pool: MyAgentPool3
-  steps: 
+stages:
+- stages: Selenium
+  jobs:
+  - job: SeleniumTests_Deploy_MyLinuxVM2
+    dependsOn: RunJMeterAndPublishReport
+    pool: MyAgentPool3
+    steps: 
     - deployment: VMDeploy
       displayName: Selenium Tests
       environment:
