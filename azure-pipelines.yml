@@ -190,8 +190,7 @@ stages:
   # ToDo: Provide <environment name> you created in your DevOps project
   #Below to confirm if Web App is in the correct RG
   - deployment: FakeRestAPI
-    pool:
-      vmImage: 'ubuntu-latest'     
+    pool: MyagentPool3  
     environment: 'MyLinuxVM2'
     strategy:
       runOnce:
