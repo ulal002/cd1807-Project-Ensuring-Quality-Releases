@@ -190,7 +190,7 @@ stages:
   # ToDo: Provide <environment name> you created in your DevOps project
   #Below to confirm if Web App is in the correct RG
   - deployment: FakeRestAPI
-    pool: MyagentPool3  
+    pool: MyAgentPool3  
     environment: 'MyLinuxVM2'
     strategy:
       runOnce:
@@ -237,6 +237,8 @@ stages:
   # ToDo: 
   - deployment: VMDeploy
     displayName: Selenium Tests
+    pool:
+      name: MyAgentPool3
     environment:
       name: 'MyLinuxVM2'         ## ToDo: Change/provide a name
       resourceType: VirtualMachine
