@@ -240,44 +240,36 @@ stages:
     dependsOn: RunJMeterAndPublishReport
     pool: MyAgentPool3
     steps: 
-    - deployment: VMDeploy
-      displayName: Selenium Tests
-      environment:
-        name: 'MyLinuxVM2'         ## ToDo: Change/provide a name
-        resourceType: VirtualMachine
-        tags: selenium
-      strategy:
-        runOnce:
-          deploy:
-            steps:
-            - download: current
-              artifact: drop-uitests     # ToDo: Change/provide a name
-            - task: Bash@3
-              inputs:
-                targetType: 'inline'
-                script: |           
-                  #! /bin/bash
-                  sudo apt-get upgrade -y
-                  sudo apt-get install python3-pip -y
-                  sudo apt-get install unzip -y  #sudo apt-get install -y chromium-browser
-                  pip3 install selenium
-                  cd ~/
-                  DIR=/home/testuser/app
-                  if [ ! -d "$DIR" ]; then
-                      mkdir app
-                  fi
-                  mv /home/urveshlal1/azagent/azagent/_work/1/drop-uitests/uitests.zip app
-                  cd app
-                  unzip -o uitests.zip
-                  FILE=/home/urveshlal1/app/chromedriver_linux64.zip
-                  if [ ! -f "$FILE" ]; then
-                      wget "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/linux64/chromedriver-linux64.zip"
-                      unzip -o chromedriver-linux64.zip
-                      sudo ln -s $PWD/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
-                  fi
-                  export PATH=$PATH:/home/urveshlal1/app
-                  echo "Starting Selenium Tests"
-                  python3 add_remove_from_cart.py >> selenium.log
-                  echo "Selenium Log Contents:"
-                  cat selenium.log
-                  echo "Completed Selenium Tests. Check selenium.log for results."
+    - download: current
+      artifact: drop-uitests    # ToDo: Change/provide a name
+      
+    - task: Bash@3
+      displayName: 'Run Selenium Tests'
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Your Bash script here
+          sudo apt-get upgrade -y
+          sudo apt-get install python3-pip -y
+          sudo apt-get install unzip -y  #sudo apt-get install -y chromium-browser
+          pip3 install selenium
+          cd ~/
+          DIR=/home/testuser/app
+          if [ ! -d "$DIR" ]; then
+              mkdir app
+          fi
+          mv /home/urveshlal1/azagent/azagent/_work/1/drop-uitests/uitests.zip app
+          cd app
+          unzip -o uitests.zip
+          FILE=/home/urveshlal1/app/chromedriver_linux64.zip
+          if [ ! -f "$FILE" ]; then
+              wget "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/linux64/chromedriver-linux64.zip"
+              unzip -o chromedriver-linux64.zip
+              sudo ln -s $PWD/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+          fi
+          export PATH=$PATH:/home/urveshlal1/app
+          echo "Starting Selenium Tests"
+          python3 add_remove_from_cart.py >> selenium.log
+          echo "Selenium Log Contents:"
+          cat selenium.log
+          echo "Completed Selenium Tests. Check selenium.log for results."
