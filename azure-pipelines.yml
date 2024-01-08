@@ -234,8 +234,7 @@ stages:
 #--------------------------------------------#  
 # Selenium | Functional UI Tests
 # ToDo:
-stages:
-- stages: Selenium
+- stage: Selenium
   jobs:
   - job: SeleniumTests_Deploy_MyLinuxVM2
     dependsOn: RunJMeterAndPublishReport
