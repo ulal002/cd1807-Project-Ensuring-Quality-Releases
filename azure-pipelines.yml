@@ -216,7 +216,7 @@ stages:
                 unzip -o perftests.zip
                 mkdir -p $(Pipeline.Workspace)/drop-perftests/report
                 ls -R $(Pipeline.Workspace)/drop-perftests/report
-                ./apache-jmeter-5.2.1/bin/jmeter -n -t PerformanceTestSuite.jmx -j jmeter.log -f -e -o report
+                ./apache-jmeter-5.2.1/bin/jmeter -n -t PerformanceTestSuite.jmx -l results.jtl -j jmeter.log -f -e -o report
                 cat jmeter.log                                                                        
               workingDirectory: $(Pipeline.Workspace)/drop-perftests           #ToDo: Use the artifact name from the task above 
 
