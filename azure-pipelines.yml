@@ -190,6 +190,13 @@ stages:
   #--------------------------------------------#  
 - stage: Deploy
   jobs:
+  - job: DownloadArtifact
+    pool: MyAgentPool3
+    steps:
+    - download: current
+      artifact: drop-fakerestapi    
+      path: $(Build.ArtifactStagingDirectory)/fakerestapi.zip
+
   - deployment: FakeRestAPI
     environment: 'MyLinuxVM2'
     strategy:
