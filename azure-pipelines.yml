@@ -231,7 +231,7 @@ stages:
           # Publish JMeter HTML report
           - task: PublishPipelineArtifact@1
             inputs:
-              targetPath: '$(Pipeline.Workspace)/drop-perftests/report'
+              targetPath: '$(Pipeline.Workspace)/drop-perftests'
               artifact: 'jmeter-html-report'
               publishLocation: 'pipeline'
   
