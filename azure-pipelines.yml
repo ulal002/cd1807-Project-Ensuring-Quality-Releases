@@ -195,7 +195,6 @@ stages:
     steps:
     - download: current
       artifact: drop-fakerestapi    
-      path: $(Build.ArtifactStagingDirectory)/fakerestapi.zip
 
   - deployment: FakeRestAPI
     environment: 'MyLinuxVM2'
