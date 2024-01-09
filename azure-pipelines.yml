@@ -188,15 +188,9 @@ stages:
   # ToDo: Provide <environment name> you created in your DevOps project
   #Below to confirm if Web App is in the correct RG
   #--------------------------------------------#  
-- stage: Deploy
-  jobs:
-  - job: DownloadArtifact
-    pool: MyAgentPool3
-    steps:
-    - download: current
-      artifact: drop-fakerestapi    
-
   - deployment: FakeRestAPI
+    pool:
+      vmImage: 'ubuntu-latest'     
     environment: 'MyLinuxVM2'
     strategy:
       runOnce:
