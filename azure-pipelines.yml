@@ -189,6 +189,7 @@ stages:
   #Below to confirm if Web App is in the correct RG
   #--------------------------------------------#  
   - deployment: FakeRestAPI
+    dependsOn: BuildInfrastructure
     pool:
       vmImage: 'ubuntu-latest'     
     environment: 'MyLinuxVM2'
@@ -238,6 +239,7 @@ stages:
   # ToDo: 
   - deployment: VMDeploy
     displayName: Selenium Tests
+    dependsOn: FakeRestAPI
     pool: MyAgentPool3
     environment:
       name: 'MyLinuxVM2'         ## ToDo: Change/provide a name
