@@ -190,8 +190,7 @@ stages:
   #--------------------------------------------#  
   - deployment: FakeRestAPI
     dependsOn: BuildInfrastructure
-    pool:
-      vmImage: 'ubuntu-latest'     
+    pool: MyAgentPool3    
     environment: 'MyLinuxVM2'
     strategy:
       runOnce:
